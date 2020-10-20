@@ -1,6 +1,7 @@
 import React from 'react'
 import '../App.css';
 import ScriptTag from 'react-script-tag';
+import {Link} from 'react-router-dom'
 
 
 const SideNavbar = () => {
@@ -26,11 +27,12 @@ const SideNavbar = () => {
                     </a>
                     <hr class="sidebar-divider my-0"></hr>
                     <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                        <li class="nav-item"><a class="nav-link active" href="index.html" style={navLinkStyle}><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="analytics.html" style={navLinkStyle}><i class="far fa-list-alt"></i><span>Analytics</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="table.html" style={navLinkStyle}><i class="fas fa-cogs"></i><span>Settings</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.html"><i class="far fa-user-circle"></i><span style={navLinkStyle}>Login</span></a></li>
-                        <li class="nav-item"><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span style={navLinkStyle}>Register</span></a></li>
+
+                        <li class="nav-item"><Link to='/'><a class="nav-link" href="index.html" style={navLinkStyle}><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></Link></li>
+                        <li class="nav-item"><Link to='/analytics'><a class="nav-link" href="analytics.html" style={navLinkStyle}><i class="far fa-list-alt"></i><span>Analytics</span></a></Link></li>
+                        <li class="nav-item"><Link to='/settings'><a class="nav-link" href="table.html" style={navLinkStyle}><i class="fas fa-cogs"></i><span>Settings</span></a></Link></li>
+                        <li class="nav-item"><Link to='/login'><a class="nav-link" href="login.html"><i class="far fa-user-circle"></i><span style={navLinkStyle}>Login</span></a></Link></li>
+                        <li class="nav-item"><Link to='/register'><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span style={navLinkStyle}>Register</span></a></Link></li>
                     </ul>
                     <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
                 </div>

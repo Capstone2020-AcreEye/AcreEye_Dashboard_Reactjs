@@ -4,6 +4,7 @@ import DashboardTasks from './DashboardTasks'
 import ScriptTag from 'react-script-tag';
 import { Helmet } from "react-helmet";
 import DashboardWeather from './DashboardWeather';
+import IframeWidget from './IframeWidget';
 
 
 const HomeDashboard = () => {
@@ -33,6 +34,17 @@ const HomeDashboard = () => {
                 <DashboardTasks></DashboardTasks>
                 <div class="col-lg-5 col-xl-4">
                     <DashboardWeather></DashboardWeather>
+                    <IframeWidget src={`https://ottawa.weatherstats.ca/icharts/rain-daily.html?width=525;height=300`}
+                        width={`525`} height={`300`}></IframeWidget>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div data-windywidget="map" data-spotid="390421"
+                        data-appid="3d0f38dd07f8af25d63950cfab74a0a5" data-newwindbar="true" data-spots="true">
+                    </div>
+                    <ScriptTag async="true" data-cfasync="false" type="text/javascript"
+                        src="https://windy.app/widget3/windy_map_async.js"></ScriptTag>
                 </div>
             </div>
         </div>

@@ -2,6 +2,19 @@
   margin-right: 10px;
 }
 
+#wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+#wrapper #content-wrapper {
+  background-color: #f8f9fc;
+  width: 100%;
+  overflow: auto;
+  flex: 1 1 auto;
+}
+
+
 .reports__images {
   display: flex;
   justify-content: center;

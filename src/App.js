@@ -1,32 +1,33 @@
 import React from 'react';
+
+import {
+  BrowserRouter as Router,
+  Switch, Route, Link
+} from 'react-router-dom'
+
 import './App.css';
-import SideNavbar from './components/SideNavbar';
-import Statusbar from './components/Statusbar';
-import HomeDashboard from './components/HomeDashboard';
+
+import Login from './components/Login'
+import Register from './components/Register'
+import Settings from './components/Settings'
+import Dashboard from './components/Dashboard'
 
 function App() {
 
-
   return (
-    <div className="App">
-      <header className="App-header">
-
-        <div id="wrapper">
-          <SideNavbar></SideNavbar>
-
-          <div class="d-flex flex-column" id="content-wrapper">
-            <div id="content">
-              <Statusbar></Statusbar>
-              <div class="container-fluid">
-              <HomeDashboard></HomeDashboard>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+        <Route path='/'>
+          <Dashboard />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

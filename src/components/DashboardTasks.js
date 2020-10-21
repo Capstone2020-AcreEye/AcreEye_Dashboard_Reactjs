@@ -52,6 +52,20 @@ const DashboardTasks = () => {
                         <li class="list-group-item">
                             <div class="row align-items-center no-gutters">
                                 <div class="col mr-2">
+                                    <h6 class="mb-0"><strong>Get new sheep dog</strong></h6><span
+                                        class="text-xs">12:30 AM</span>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="custom-control custom-checkbox"><input type="checkbox"
+                                        class="custom-control-input" id="formCheck-4" /><label
+                                            class="custom-control-label" for="formCheck-4"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>                        
+                        <li class="list-group-item">
+                            <div class="row align-items-center no-gutters">
+                                <div class="col mr-2">
                                     <h6 class="mb-0"><strong>Tell Daughter old sheep dog was sent to
                                                             another farm to live out the rest of his days</strong></h6>
                                     <span class="text-xs">12:30 AM</span>
@@ -67,34 +81,6 @@ const DashboardTasks = () => {
                         <li class="list-group-item">
                             <div class="row align-items-center no-gutters">
                                 <div class="col mr-2">
-                                    <h6 class="mb-0"><strong>Get new sheep dog</strong></h6><span
-                                        class="text-xs">12:30 AM</span>
-                                </div>
-                                <div class="col-auto">
-                                    <div class="custom-control custom-checkbox"><input type="checkbox"
-                                        class="custom-control-input" id="formCheck-4" /><label
-                                            class="custom-control-label" for="formCheck-4"></label>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row align-items-center no-gutters">
-                                <div class="col mr-2">
-                                    <h6 class="mb-0"><strong>Send Wife to farm</strong></h6><span
-                                        class="text-xs">12:30 AM</span>
-                                </div>
-                                <div class="col-auto">
-                                    <div class="custom-control custom-checkbox"><input type="checkbox"
-                                        class="custom-control-input" id="formCheck-5" /><label
-                                            class="custom-control-label" for="formCheck-5"></label>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row align-items-center no-gutters">
-                                <div class="col mr-2">
                                     <h6 class="mb-0"><strong>Find younger wife</strong></h6><span
                                         class="text-xs">12:30 AM</span>
                                 </div>
@@ -102,6 +88,20 @@ const DashboardTasks = () => {
                                     <div class="custom-control custom-checkbox"><input type="checkbox"
                                         class="custom-control-input" id="formCheck-6" /><label
                                             class="custom-control-label" for="formCheck-6"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>                        
+                        <li class="list-group-item">
+                            <div class="row align-items-center no-gutters">
+                                <div class="col mr-2">
+                                    <h6 class="mb-0"><strong>Send old wife to other farm</strong></h6><span
+                                        class="text-xs">12:30 AM</span>
+                                </div>
+                                <div class="col-auto">
+                                    <div class="custom-control custom-checkbox"><input type="checkbox"
+                                        class="custom-control-input" id="formCheck-5" /><label
+                                            class="custom-control-label" for="formCheck-5"></label>
                                     </div>
                                 </div>
                             </div>

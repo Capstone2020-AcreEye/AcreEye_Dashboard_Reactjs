@@ -33,7 +33,7 @@ const Statusbar = () => {
                         </div>
                         <div class="d-flex">
                             <h5 class="status_text status_item"><strong>Flight Time</strong></h5><span
-                                class="status_item">18hrs</span>
+                                class="status_item">17hrs</span>
                         </div>
                     </div>
                     <ul class="nav navbar-nav flex-nowrap ml-auto">

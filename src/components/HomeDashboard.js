@@ -2,7 +2,6 @@ import React from 'react'
 import DashboardCards from './DashboardCards'
 import DashboardTasks from './DashboardTasks'
 import ScriptTag from 'react-script-tag';
-import { Helmet } from "react-helmet";
 import DashboardWeather from './DashboardWeather';
 import IframeWidget from './IframeWidget';
 

@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const DashboardCards = () => {
+
+    const [monthlyEarnings, setMonthlyEarnings] = useState('$40,000')
+    const [annualEarnings, setAnnualEarnings] = useState('$215,000')
+    const [taskPercentage, setTaskPercentage] = useState('50')
+    const [pendingRequests, setPendingRequests] = useState('18')
 
     return (
         <div>
@@ -12,7 +17,7 @@ const DashboardCards = () => {
                                 <div class="col mr-2">
                                     <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">
                                         <span>Earnings (monthly)</span></div>
-                                    <div class="text-dark font-weight-bold h5 mb-0"><span>$40,000</span></div>
+                                    <div class="text-dark font-weight-bold h5 mb-0"><span>{monthlyEarnings}</span></div>
                                 </div>
                                 <div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>
                             </div>
@@ -26,7 +31,7 @@ const DashboardCards = () => {
                                 <div class="col mr-2">
                                     <div class="text-uppercase text-success font-weight-bold text-xs mb-1">
                                         <span>Earnings (annual)</span></div>
-                                    <div class="text-dark font-weight-bold h5 mb-0"><span>$215,000</span></div>
+                                    <div class="text-dark font-weight-bold h5 mb-0"><span>{annualEarnings}</span></div>
                                 </div>
                                 <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
                                 </div>
@@ -48,9 +53,11 @@ const DashboardCards = () => {
                                         </div>
                                         <div class="col">
                                             <div class="progress progress-sm">
-                                                <div class="progress-bar bg-info" aria-valuenow="50"
-                                                    aria-valuemin="0" aria-valuemax="100" style={{width: '50%'}}>
-                                                    <span class="sr-only">50%</span></div>
+                                                <div 
+                                                    class="progress-bar bg-info"
+                                                    aria-valuenow={taskPercentage} aria-valuemin="0" aria-valuemax="100" 
+                                                    style={{ width: '50%' }}>
+                                                    <span class="sr-only">{taskPercentage}%</span></div>
                                             </div>
                                         </div>
                                     </div>
@@ -68,7 +75,7 @@ const DashboardCards = () => {
                                 <div class="col mr-2">
                                     <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
                                         <span>Pending Requests</span></div>
-                                    <div class="text-dark font-weight-bold h5 mb-0"><span>18</span></div>
+                                    <div class="text-dark font-weight-bold h5 mb-0"><span>{pendingRequests}</span></div>
                                 </div>
                                 <div class="col-auto"><i class="fas fa-comments fa-2x text-gray-300"></i></div>
                             </div>

@@ -7,7 +7,7 @@ const Register = () => {
             <div className="card shadow-lg o-hidden border-0 my-5">
                 <div className="card-body p-0">
                     <div className="row">
-                        <div className="col-lg-5 d-none d-lg-flex"><img className="img-fluid" src={`${process.env.PUBLIC_URL}/img/3.png`} style={{ background: '#69a14a' }} /></div>
+                        <div className="col-lg-5 d-none d-lg-flex"><img className="img-fluid" src={`${process.env.PUBLIC_URL}/img/3.png`} style={{ background: '#69a14a' }} alt='register image'/></div>
                         <div className="col-lg-7">
                             <div className="p-5">
                                 <div className="text-center">

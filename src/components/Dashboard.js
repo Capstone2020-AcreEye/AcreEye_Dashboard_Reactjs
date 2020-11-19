@@ -1,17 +1,14 @@
 import React from 'react'
 
 import {
-    BrowserRouter as Router,
-    Switch, Route, Link
+    Switch, Route
   } from 'react-router-dom'
 
 import SideNavbar from './SideNavbar';
-import Statusbar from './Statusbar';
+import Header from './Header';
 import HomeDashboard from './HomeDashboard';
 import Footer from './Footer'
-import Login from './Login'
 import Analytics from './Analytics'
-import Register from './Register'
 import Settings from './Settings'
 
 const Dashboard = () => {
@@ -25,7 +22,7 @@ const Dashboard = () => {
                 </div>
                 <div class="d-flex flex-column" id="content-wrapper">
                     <div id="content">
-                        <Statusbar></Statusbar>
+                        <Header></Header>
                         <div class="container-fluid">
                             <Switch>
                                 <Route path="/analytics">

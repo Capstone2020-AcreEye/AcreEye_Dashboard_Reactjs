@@ -1,16 +1,20 @@
 import React from 'react'
 import {useField} from '../hooks/hooks'
 import {auth} from '../firebase'
+import { useHistory } from "react-router-dom";
+
 
 const Login = () => {
 
     const email = useField('email')
     const password = useField('password')
+    const history = useHistory()
 
     const userLogin = (e) => {
         e.preventDefault()
         console.log(`user: ${email.value} password: ${password.value}`)
         auth.signInWithEmailAndPassword(email.value, password.value)
+        .then(() => history.push('/'))
       .catch((error) => alert(error.message))
     }
 

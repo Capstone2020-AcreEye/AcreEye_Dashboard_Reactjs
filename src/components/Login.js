@@ -1,6 +1,20 @@
 import React from 'react'
+import {useField} from '../hooks/hooks'
+import {auth} from '../firebase'
 
 const Login = () => {
+
+    const email = useField('email')
+    const password = useField('password')
+
+    const userLogin = (e) => {
+        e.preventDefault()
+        console.log(`user: ${email.value} password: ${password.value}`)
+        auth.signInWithEmailAndPassword(email.value, password.value)
+      .catch((error) => alert(error.message))
+    }
+
+
     return (
         <div>
             <div className="container" >
@@ -15,9 +29,9 @@ const Login = () => {
                                             <div className="text-center">
                                                 <h4 className="text-dark mb-4">Welcome Back!</h4>
                                             </div>
-                                            <form className="user">
-                                                <div className="form-group"><input className="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." name="email" /></div>
-                                                <div className="form-group"><input className="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Password" name="password" /></div>
+                                            <form className="user" onSubmit={userLogin}>
+                                                <div className="form-group"><input className="form-control form-control-user" type={email.type} onChange={email.onChange} value={email.value} id="exampleInputEmail" placeholder="Enter Email Address..." name="email" /></div>
+                                                <div className="form-group"><input className="form-control form-control-user" type={password.type} onChange={password.onChange} value={password.value} id="exampleInputPassword" placeholder="Password" name="password" /></div>
                                                 <div className="form-group">
                                                     <div className="custom-control custom-checkbox small">
                                                         <div className="form-check"><input className="form-check-input custom-control-input" type="checkbox" id="formCheck-1" /><label className="form-check-label custom-control-label" htmlFor="formCheck-1">Remember Me</label></div>

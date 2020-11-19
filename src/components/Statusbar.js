@@ -1,4 +1,5 @@
 import React from 'react'
+import {auth} from '../firebase'
 
 const Statusbar = () => {
     const PUBLIC_URL = process.env.PUBLIC_URL
@@ -14,6 +15,14 @@ const Statusbar = () => {
     const droneStatusStyle = {
         color: '#69a14a'
     }
+
+    const signOut = () => {
+        auth.signOut().then((res) => {
+            console.log('signed out!')
+        })
+    }
+
+
 
     return (
         <div>
@@ -52,7 +61,7 @@ const Statusbar = () => {
                                     <a class="dropdown-item" href="#"><i
                                         class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity
                                             log</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i
+                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#" onClick={signOut}><i
                                         class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                                 </div>
                             </div>

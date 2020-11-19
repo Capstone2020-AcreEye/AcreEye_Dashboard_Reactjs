@@ -1,6 +1,6 @@
 import React from 'react'
 import {useField} from '../hooks/hooks'
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import {auth} from '../firebase'
 
 const Register = () => {
@@ -57,7 +57,7 @@ const Register = () => {
                                     <hr />
                                 </form>
                                 <div className="text-center"><a className="small" href="forgot-password.html">Forgot Password?</a></div>
-                                <div className="text-center"><a className="small" href="login.html">Already have an account? Login!</a></div>
+                                <div className="text-center"><Link to='/login'><a className="small" href="login.html">Already have an account? Login!</a></Link></div>
                             </div>
                         </div>
                     </div>

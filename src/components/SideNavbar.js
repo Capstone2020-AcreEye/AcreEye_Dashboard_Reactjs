@@ -19,22 +19,22 @@ const SideNavbar = () => {
     return (
         <div>
             <ScriptTag type="text/javascript" src={`${PUBLIC_URL}/js/theme.js`} />
-            <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style={navStyle}>
-                <div class="container-fluid d-flex flex-column p-0">
-                    <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                        <div class="sidebar-brand-icon rotate-n-15"></div>
-                        <div class="sidebar-brand-text mx-3"><img src={`${PUBLIC_URL}/img/logo.png`} alt="logo" style={logoStyle}></img><span style={{ color: "#69a14a" }}>ACREEYE</span></div>
+            <nav className="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style={navStyle}>
+                <div className="container-fluid d-flex flex-column p-0">
+                    <a className="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                        <div className="sidebar-brand-icon rotate-n-15"></div>
+                        <div className="sidebar-brand-text mx-3"><img src={`${PUBLIC_URL}/img/logo.png`} alt="logo" style={logoStyle}></img><span style={{ color: "#69a14a" }}>ACREEYE</span></div>
                     </a>
-                    <hr class="sidebar-divider my-0"></hr>
-                    <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                    <hr className="sidebar-divider my-0"></hr>
+                    <ul className="nav navbar-nav text-light" id="accordionSidebar">
 
-                        <li class="nav-item"><Link to='/'><a class="nav-link" href="index.html" style={navLinkStyle}><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></Link></li>
-                        <li class="nav-item"><Link to='/analytics'><a class="nav-link" href="analytics.html" style={navLinkStyle}><i class="far fa-list-alt"></i><span>Analytics</span></a></Link></li>
-                        <li class="nav-item"><Link to='/settings'><a class="nav-link" href="table.html" style={navLinkStyle}><i class="fas fa-cogs"></i><span>Settings</span></a></Link></li>
-                        <li class="nav-item"><Link to='/login'><a class="nav-link" href="login.html"><i class="far fa-user-circle"></i><span style={navLinkStyle}>Login</span></a></Link></li>
-                        <li class="nav-item"><Link to='/register'><a class="nav-link" href="register.html"><i class="fas fa-user-circle"></i><span style={navLinkStyle}>Register</span></a></Link></li>
+                        <li className="nav-item"><a className="nav-link" href="/" style={navLinkStyle}><i className="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+                        <li className="nav-item"><a className="nav-link" href="/analytics" style={navLinkStyle}><i className="far fa-list-alt"></i><span>Analytics</span></a></li>
+                        <li className="nav-item"><a className="nav-link" href="/settings" style={navLinkStyle}><i className="fas fa-cogs"></i><span>Settings</span></a></li>
+                        <li className="nav-item"><a className="nav-link" href="login"><i className="far fa-user-circle"></i><span style={navLinkStyle}>Login</span></a></li>
+                        <li className="nav-item"><a className="nav-link" href="register"><i className="fas fa-user-circle"></i><span style={navLinkStyle}>Register</span></a></li>
                     </ul>
-                    <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+                    <div className="text-center d-none d-md-inline"><button className="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
                 </div>
             </nav>
 

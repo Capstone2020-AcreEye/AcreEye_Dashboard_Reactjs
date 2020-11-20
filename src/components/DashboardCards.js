@@ -9,75 +9,75 @@ const DashboardCards = () => {
 
     return (
         <div>
-            <div class="row">
-                <div class="col-md-6 col-xl-3 mb-4">
-                    <div class="card shadow border-left-primary py-2">
-                        <div class="card-body">
-                            <div class="row align-items-center no-gutters">
-                                <div class="col mr-2">
-                                    <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">
+            <div className="row">
+                <div className="col-md-6 col-xl-3 mb-4">
+                    <div className="card shadow border-left-primary py-2">
+                        <div className="card-body">
+                            <div className="row align-items-center no-gutters">
+                                <div className="col mr-2">
+                                    <div className="text-uppercase text-primary font-weight-bold text-xs mb-1">
                                         <span>Earnings (monthly)</span></div>
-                                    <div class="text-dark font-weight-bold h5 mb-0"><span>{monthlyEarnings}</span></div>
+                                    <div className="text-dark font-weight-bold h5 mb-0"><span>{monthlyEarnings}</span></div>
                                 </div>
-                                <div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>
+                                <div className="col-auto"><i className="fas fa-calendar fa-2x text-gray-300"></i></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-3 mb-4">
-                    <div class="card shadow border-left-success py-2">
-                        <div class="card-body">
-                            <div class="row align-items-center no-gutters">
-                                <div class="col mr-2">
-                                    <div class="text-uppercase text-success font-weight-bold text-xs mb-1">
+                <div className="col-md-6 col-xl-3 mb-4">
+                    <div className="card shadow border-left-success py-2">
+                        <div className="card-body">
+                            <div className="row align-items-center no-gutters">
+                                <div className="col mr-2">
+                                    <div className="text-uppercase text-success font-weight-bold text-xs mb-1">
                                         <span>Earnings (annual)</span></div>
-                                    <div class="text-dark font-weight-bold h5 mb-0"><span>{annualEarnings}</span></div>
+                                    <div className="text-dark font-weight-bold h5 mb-0"><span>{annualEarnings}</span></div>
                                 </div>
-                                <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                <div className="col-auto"><i className="fas fa-dollar-sign fa-2x text-gray-300"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-3 mb-4">
-                    <div class="card shadow border-left-info py-2">
-                        <div class="card-body">
-                            <div class="row align-items-center no-gutters">
-                                <div class="col mr-2">
-                                    <div class="text-uppercase text-info font-weight-bold text-xs mb-1">
+                <div className="col-md-6 col-xl-3 mb-4">
+                    <div className="card shadow border-left-info py-2">
+                        <div className="card-body">
+                            <div className="row align-items-center no-gutters">
+                                <div className="col mr-2">
+                                    <div className="text-uppercase text-info font-weight-bold text-xs mb-1">
                                         <span>Tasks</span></div>
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col-auto">
-                                            <div class="text-dark font-weight-bold h5 mb-0 mr-3">
+                                    <div className="row no-gutters align-items-center">
+                                        <div className="col-auto">
+                                            <div className="text-dark font-weight-bold h5 mb-0 mr-3">
                                                 <span>50%</span></div>
                                         </div>
-                                        <div class="col">
-                                            <div class="progress progress-sm">
+                                        <div className="col">
+                                            <div className="progress progress-sm">
                                                 <div 
-                                                    class="progress-bar bg-info"
+                                                    className="progress-bar bg-info"
                                                     aria-valuenow={taskPercentage} aria-valuemin="0" aria-valuemax="100" 
                                                     style={{ width: '50%' }}>
-                                                    <span class="sr-only">{taskPercentage}%</span></div>
+                                                    <span className="sr-only">{taskPercentage}%</span></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                <div className="col-auto"><i className="fas fa-clipboard-list fa-2x text-gray-300"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-3 mb-4">
-                    <div class="card shadow border-left-warning py-2">
-                        <div class="card-body">
-                            <div class="row align-items-center no-gutters">
-                                <div class="col mr-2">
-                                    <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                <div className="col-md-6 col-xl-3 mb-4">
+                    <div className="card shadow border-left-warning py-2">
+                        <div className="card-body">
+                            <div className="row align-items-center no-gutters">
+                                <div className="col mr-2">
+                                    <div className="text-uppercase text-warning font-weight-bold text-xs mb-1">
                                         <span>Pending Requests</span></div>
-                                    <div class="text-dark font-weight-bold h5 mb-0"><span>{pendingRequests}</span></div>
+                                    <div className="text-dark font-weight-bold h5 mb-0"><span>{pendingRequests}</span></div>
                                 </div>
-                                <div class="col-auto"><i class="fas fa-comments fa-2x text-gray-300"></i></div>
+                                <div className="col-auto"><i className="fas fa-comments fa-2x text-gray-300"></i></div>
                             </div>
                         </div>
                     </div>

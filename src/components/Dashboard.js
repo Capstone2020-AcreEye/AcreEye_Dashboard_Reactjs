@@ -20,10 +20,10 @@ const Dashboard = () => {
                 <div>
                 <SideNavbar></SideNavbar>
                 </div>
-                <div class="d-flex flex-column" id="content-wrapper">
+                <div className="d-flex flex-column" id="content-wrapper">
                     <div id="content">
                         <Header></Header>
-                        <div class="container-fluid">
+                        <div className="container-fluid">
                             <Switch>
                                 <Route path="/analytics">
                                     <Analytics />
@@ -40,7 +40,7 @@ const Dashboard = () => {
                     </div>
                     <Footer></Footer>
                 </div>
-                <a class="border rounded d-inline scroll-to-top" href="#wrapper"><i class="fas fa-angle-up"></i></a>
+                <a className="border rounded d-inline scroll-to-top" href="#wrapper"><i className="fas fa-angle-up"></i></a>
             </div>
         </div>
     )

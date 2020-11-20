@@ -46,7 +46,7 @@ const Login = () => {
                                                 <hr></hr>
                                             </form>
                                             <div className="text-center"><a className="small" href="forgot-password.html">Forgot Password?</a></div>
-                                            <div className="text-center"><Link to='/register'><a className="small" href="register.html">Create an Account!</a></Link></div>
+                                            <div className="text-center"><Link to='/register' className="small">Create an Account!</Link></div>
                                         </div>
                                     </div>
                                 </div>

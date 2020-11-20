@@ -31,43 +31,43 @@ const Header = () => {
 
     return (
         <div>
-            <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                <div class="container-fluid">
-                    <div class="d-flex flex-row justify-content-around align-items-xl-center" style={statusStyle}>
-                        <div class="d-flex align-items-xl-center">
-                            <h5 class="status_text status_item"><strong>Battery</strong></h5>
-                            <div class="progress">
-                                <div class="progress-bar" aria-valuenow={BatteryPercentage} aria-valuemin="0" aria-valuemax="100"
+            <nav className="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                <div className="container-fluid">
+                    <div className="d-flex flex-row justify-content-around align-items-xl-center" style={statusStyle}>
+                        <div className="d-flex align-items-xl-center">
+                            <h5 className="status_text status_item"><strong>Battery</strong></h5>
+                            <div className="progress">
+                                <div className="progress-bar" aria-valuenow={BatteryPercentage} aria-valuemin="0" aria-valuemax="100"
                                     style={progressbarStyle}>{BatteryPercentage}%</div>
                             </div>
                         </div>
-                        <div class="d-flex justify-content-xl-center align-items-xl-center">
-                            <h5 class="d-xl-flex status_text status_item"><strong>Status</strong></h5><i
-                                class="fa fa-circle d-xl-flex status_item" style={{color: statusColor}}></i>
+                        <div className="d-flex justify-content-xl-center align-items-xl-center">
+                            <h5 className="d-xl-flex status_text status_item"><strong>Status</strong></h5><i
+                                className="fa fa-circle d-xl-flex status_item" style={{color: statusColor}}></i>
                         </div>
-                        <div class="d-flex">
-                            <h5 class="status_text status_item"><strong>Flight Time</strong></h5><span
-                                class="status_item">{flightTime}</span>
+                        <div className="d-flex">
+                            <h5 className="status_text status_item"><strong>Flight Time</strong></h5><span
+                                className="status_item">{flightTime}</span>
                         </div>
                     </div>
-                    <ul class="nav navbar-nav flex-nowrap ml-auto">
-                        <div class="d-none d-sm-block topbar-divider"></div>
-                        <li class="nav-item dropdown no-arrow">
-                            <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
+                    <ul className="nav navbar-nav flex-nowrap ml-auto">
+                        <div className="d-none d-sm-block topbar-divider"></div>
+                        <li className="nav-item dropdown no-arrow">
+                            <div className="nav-item dropdown no-arrow"><a className="dropdown-toggle nav-link"
                                 data-toggle="dropdown" aria-expanded="false" href="#"><span
-                                    class="d-none d-lg-inline mr-2 text-gray-600 small">{username}</span><img
-                                        class="border rounded-circle img-profile"
+                                    className="d-none d-lg-inline mr-2 text-gray-600 small">{username}</span><img
+                                        className="border rounded-circle img-profile"
                                         src={`${PUBLIC_URL}/img/dogs/image2.jpeg`}></img></a>
-                                <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a
-                                    class="dropdown-item" href="#"><i
-                                        class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a
-                                            class="dropdown-item" href="#"><i
-                                                class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
-                                    <a class="dropdown-item" href="#"><i
-                                        class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity
+                                <div className="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a
+                                    className="dropdown-item" href="#"><i
+                                        className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a
+                                            className="dropdown-item" href="#"><i
+                                                className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
+                                    <a className="dropdown-item" href="#"><i
+                                        className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity
                                             log</a>
-                                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#" onClick={signOut}><i
-                                        class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
+                                    <div className="dropdown-divider"></div><a className="dropdown-item" href="#" onClick={signOut}><i
+                                        className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                                 </div>
                             </div>
                         </li>

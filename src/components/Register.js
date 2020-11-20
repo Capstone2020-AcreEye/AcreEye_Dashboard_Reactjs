@@ -1,7 +1,7 @@
 import React from 'react'
 import {useField} from '../hooks/hooks'
 import { useHistory, Link } from "react-router-dom";
-import {auth} from '../firebase'
+import {auth, googleProvider} from '../firebase'
 
 const Register = () => {
 
@@ -28,8 +28,18 @@ const Register = () => {
             history.push('/')
         })
       .catch((error) => alert(error.message))
-
     }
+
+    const googleLogin  = (e) => {
+        auth.signInWithPopup(googleProvider)
+        .then(result => {
+            console.log('successfully logged in with google')
+            history.push('/')
+           console.log(result)
+        })
+        .catch(error => alert(error.message))
+
+    } 
 
     return (
 
@@ -53,11 +63,11 @@ const Register = () => {
                                         <div className="col-sm-6 mb-3 mb-sm-0"><input className="form-control form-control-user" type={password.type} value={password.value} onChange={password.onChange} id="examplePasswordInput" placeholder="Password" name="password" /></div>
                                         <div className="col-sm-6"><input className="form-control form-control-user" type={password_repeat.type} value={password_repeat.value} onChange={password_repeat.onChange} id="exampleRepeatPasswordInput" placeholder="Repeat Password" name="password_repeat" /></div>
                                     </div><button className="btn btn-primary btn-block text-white btn-user" type="submit" style={{ background: '#69a14a' }}>Register Account</button>
-                                    <hr /><a className="btn btn-primary btn-block text-white btn-google btn-user" role="button"><i className="fab fa-google" />&nbsp; Register with Google</a><a className="btn btn-primary btn-block text-white btn-facebook btn-user" role="button"><i className="fab fa-facebook-f" />&nbsp; Register with Facebook</a>
+                                    <hr /><a className="btn btn-primary btn-block text-white btn-google btn-user" role="button" onClick={googleLogin}><i className="fab fa-google" />&nbsp; Register with Google</a><a className="btn btn-primary btn-block text-white btn-facebook btn-user" role="button"><i className="fab fa-facebook-f" />&nbsp; Register with Facebook</a>
                                     <hr />
                                 </form>
                                 <div className="text-center"><a className="small" href="forgot-password.html">Forgot Password?</a></div>
-                                <div className="text-center"><Link to='/login'><a className="small" href="login.html">Already have an account? Login!</a></Link></div>
+                                <div className="text-center"><Link to='/login' className="small">Already have an account? Login!</Link></div>
                             </div>
                         </div>
                     </div>

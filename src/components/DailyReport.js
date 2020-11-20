@@ -62,8 +62,8 @@ const DailyReport = () => {
     const [images, setImages] = useState(items)
 
     return (
-        <div class="row">
-            <div class="reports__images">
+        <div className="row">
+            <div className="reports__images">
                 {images.map((item) => {
                     return <NDVIImage imageURL={item['imageURL']}></NDVIImage>
                 })}

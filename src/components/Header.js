@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-import React, { useState } from 'react'
-import { auth } from '../firebase'
-=======
 import React, {useState} from 'react'
 import {auth} from '../firebase'
 import {useSelector} from 'react-redux'
->>>>>>> df216db3c1a61cce071375f379daa72a22c5935f
 
 const Header = () => {
     const PUBLIC_URL = process.env.PUBLIC_URL

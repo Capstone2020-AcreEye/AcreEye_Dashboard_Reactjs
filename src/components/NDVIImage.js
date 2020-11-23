@@ -3,8 +3,8 @@ import React from 'react'
 function NDVIImage({imageURL}) {
     return (
         <div>
-            <div class="reports__image">
-                <div class="card">
+            <div className="reports__image">
+                <div className="card">
                     <img src={imageURL} width="160" alt='NDVI_IMAGE'></img>
                 </div>
             </div>

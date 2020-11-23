@@ -1,7 +1,8 @@
 import React from 'react'
 import {useField} from '../hooks/hooks'
 import {auth} from '../firebase'
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
+
 
 
 const Login = () => {
@@ -45,7 +46,7 @@ const Login = () => {
                                                 <hr></hr>
                                             </form>
                                             <div className="text-center"><a className="small" href="forgot-password.html">Forgot Password?</a></div>
-                                            <div className="text-center"><a className="small" href="register.html">Create an Account!</a></div>
+                                            <div className="text-center"><Link to='/register' className="small">Create an Account!</Link></div>
                                         </div>
                                     </div>
                                 </div>

@@ -8,6 +8,7 @@ const DashboardTasks = () => {
     const [tasks, setTasks] = useState([])
 
     useEffect(() => {
+        let isMounted = true
         db.collection('tasks').orderBy('time').onSnapshot((snapshot) => {
             setTasks(snapshot.docs.map( doc => {
                 console.log(doc.data(), doc.id) 

@@ -1,6 +1,6 @@
 import React from 'react'
 import {useField} from '../hooks/hooks'
-import {auth} from '../firebase'
+import {auth, googleProvider} from '../firebase'
 import { useHistory, Link } from "react-router-dom";
 
 
@@ -18,6 +18,17 @@ const Login = () => {
         .then(() => history.push('/'))
       .catch((error) => alert(error.message))
     }
+
+    const googleLogin  = (e) => {
+        auth.signInWithPopup(googleProvider)
+        .then(result => {
+            console.log('successfully logged in with google')
+            history.push('/')
+           console.log(result)
+        })
+        .catch(error => alert(error.message))
+
+    } 
 
 
     return (
@@ -42,7 +53,7 @@ const Login = () => {
                                                         <div className="form-check"><input className="form-check-input custom-control-input" type="checkbox" id="formCheck-1" /><label className="form-check-label custom-control-label" htmlFor="formCheck-1">Remember Me</label></div>
                                                     </div>
                                                 </div><button className="btn btn-primary btn-block text-white btn-user" type="submit" style={{ background: '#69a14a' }}>Login</button>
-                                                <hr></hr><a className="btn btn-primary btn-block text-white btn-google btn-user" role="button"><i className="fab fa-google" />&nbsp; Login with Google</a><a className="btn btn-primary btn-block text-white btn-facebook btn-user" role="button"><i className="fab fa-facebook-f" />&nbsp; Login with Facebook</a>
+                                                <hr></hr><a className="btn btn-primary btn-block text-white btn-google btn-user" role="button" onClick={googleLogin}><i className="fab fa-google" />&nbsp; Login with Google</a><a className="btn btn-primary btn-block text-white btn-facebook btn-user" role="button"><i className="fab fa-facebook-f" />&nbsp; Login with Facebook</a>
                                                 <hr></hr>
                                             </form>
                                             <div className="text-center"><a className="small" href="forgot-password.html">Forgot Password?</a></div>

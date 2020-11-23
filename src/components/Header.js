@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import {auth} from '../firebase'
+import React, { useState } from 'react'
+import { auth } from '../firebase'
 
 const Header = () => {
     const PUBLIC_URL = process.env.PUBLIC_URL
@@ -43,7 +43,7 @@ const Header = () => {
                         </div>
                         <div className="d-flex justify-content-xl-center align-items-xl-center">
                             <h5 className="d-xl-flex status_text status_item"><strong>Status</strong></h5><i
-                                className="fa fa-circle d-xl-flex status_item" style={{color: statusColor}}></i>
+                                className="fa fa-circle d-xl-flex status_item" style={{ color: statusColor }}></i>
                         </div>
                         <div className="d-flex">
                             <h5 className="status_text status_item"><strong>Flight Time</strong></h5><span
@@ -54,10 +54,11 @@ const Header = () => {
                         <div className="d-none d-sm-block topbar-divider"></div>
                         <li className="nav-item dropdown no-arrow">
                             <div className="nav-item dropdown no-arrow"><a className="dropdown-toggle nav-link"
-                                data-toggle="dropdown" aria-expanded="false" href="#"><span
-                                    className="d-none d-lg-inline mr-2 text-gray-600 small">{username}</span><img
-                                        className="border rounded-circle img-profile"
-                                        src={`${PUBLIC_URL}/img/dogs/image2.jpeg`}></img></a>
+                                data-toggle="dropdown" aria-expanded="false" href="#">
+                                <span className="d-none d-lg-inline mr-2 text-gray-600 small">{username}</span>
+                                <img
+                                    className="border rounded-circle img-profile"
+                                    src={`${PUBLIC_URL}/img/dogs/image2.jpeg`} alt='user image'></img></a>
                                 <div className="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a
                                     className="dropdown-item" href="#"><i
                                         className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a

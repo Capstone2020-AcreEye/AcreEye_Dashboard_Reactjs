@@ -1,25 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, {useEffect} from 'react'
 import CardHeader from './CardHeader'
 import TaskItem from './TaskItem'
-import db from '../firebase'
+import {useDispatch, useSelector} from 'react-redux'
+import {initializeTasks} from '../reducers/tasksReducer'
 
 const DashboardTasks = () => {
 
-    const [tasks, setTasks] = useState([])
+    const dispatch = useDispatch()
+    const tasks = useSelector(state => state.tasks)
 
     useEffect(() => {
-        let isMounted = true
-        db.collection('tasks').orderBy('time').onSnapshot((snapshot) => {
-            setTasks(snapshot.docs.map( doc => {
-                console.log(doc.data(), doc.id) 
-                return {
-                    id: doc.id,
-                    ...doc.data()
-                }
-                      
-            }))
-        })
+        dispatch(initializeTasks());
     }, [])
+
+
+    console.log(tasks)
 
     return (
 
@@ -31,10 +26,9 @@ const DashboardTasks = () => {
 
                 <div className="card-body">
                     <ul className="list-group list-group-flush">
-                        {tasks.map((item) => {
+                        {tasks.map( (item) => {
                             return <TaskItem key={item['id']} id={item['id']} task={item['task']} time={item['time']} > </TaskItem>
                         })}
-
                     </ul>
                     <ul className="list-group"></ul>
                 </div>

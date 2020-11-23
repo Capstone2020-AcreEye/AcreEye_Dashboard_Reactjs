@@ -1,8 +1,5 @@
-import React, { button } from 'react'
-import {
-    BrowserRouter as Router,
-    Switch, Route, Link
-} from 'react-router-dom'
+import React from 'react'
+import {Switch, Route, Link} from 'react-router-dom'
 import DailyReport from './DailyReport'
 import Infometrics from './Infometrics'
 

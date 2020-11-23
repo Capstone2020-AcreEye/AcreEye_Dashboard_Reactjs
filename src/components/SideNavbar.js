@@ -1,7 +1,6 @@
 import React from 'react'
 import '../App.css';
 import ScriptTag from 'react-script-tag';
-import {Link} from 'react-router-dom'
 
 
 const SideNavbar = () => {

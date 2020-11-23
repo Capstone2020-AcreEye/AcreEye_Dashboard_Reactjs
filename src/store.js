@@ -1,15 +1,20 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 import cardsReducer from './reducers/cardsReducer'
+import tasksReducer from './reducers/tasksReducer'
 
 const reducer = combineReducers({
-    cards: cardsReducer
+    cards: cardsReducer,
+    tasks: tasksReducer
 })
 
 const store = createStore(
     reducer,
-    composeWithDevTools()
+    composeWithDevTools(
+        applyMiddleware(thunk)
+    )
 )
 
 export default store

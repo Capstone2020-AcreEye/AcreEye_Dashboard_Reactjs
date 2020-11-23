@@ -12,7 +12,7 @@ function cardsReducer(state = initialState, action) {
     switch (action.type) {
         case 'UPDATE':
             return updatedState
-        case 'INIT':
+        case 'INIT_CARDS':
             return updatedState
         default:
             return state
@@ -21,7 +21,7 @@ function cardsReducer(state = initialState, action) {
 
 export const initializeCards = () => {
     return {
-        type: 'INIT',
+        type: 'INIT_CARDS',
         data:{
             monthlyEarnings: '40,000',
             annualEarnings: '215,000',

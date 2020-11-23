@@ -4,14 +4,8 @@ import CardHeader from './CardHeader'
 
 const DashboardWeather = () => {
     const [iframe, setIframe] = useState(false)
-    const PUBLIC_URL = process.env.PUBLIC_URL
-
-    const greenColorBackgroundStyle = {
-        background: '#69a14a'
-    }
-    const greenColorTextStyle = {
-        color: '#69a14a'
-    }
+    
+    
     const weatherWidgetStyle = {
         justifyContent: "center",
         alignItems: "center"

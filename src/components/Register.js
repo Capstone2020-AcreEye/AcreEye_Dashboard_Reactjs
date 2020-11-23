@@ -1,7 +1,7 @@
 import React from 'react'
-import {useField} from '../hooks/hooks'
+import { useField } from '../hooks/hooks'
 import { useHistory, Link } from "react-router-dom";
-import {auth, googleProvider} from '../firebase'
+import { auth, googleProvider } from '../firebase'
 
 const Register = () => {
 
@@ -16,30 +16,30 @@ const Register = () => {
         e.preventDefault()
         console.log(`user: ${email.value} password: ${password.value}`)
         auth.createUserWithEmailAndPassword(email.value, password.value)
-        .then((authUser) => {
-            authUser.user.updateProfile({
-                displayName:first_name.value
+            .then((authUser) => {
+                authUser.user.updateProfile({
+                    displayName: first_name.value
+                })
+                first_name.value = ''
+                last_name.value = ''
+                email.value = ''
+                password.value = ''
+                password_repeat.value = ''
+                history.push('/')
             })
-            first_name.value = ''
-            last_name.value = ''
-            email.value = ''
-            password.value = ''
-            password_repeat.value = ''
-            history.push('/')
-        })
-      .catch((error) => alert(error.message))
+            .catch((error) => alert(error.message))
     }
 
-    const googleLogin  = (e) => {
+    const googleLogin = (e) => {
         auth.signInWithPopup(googleProvider)
-        .then(result => {
-            console.log('successfully logged in with google')
-            history.push('/')
-           console.log(result)
-        })
-        .catch(error => alert(error.message))
+            .then(result => {
+                console.log('successfully logged in with google')
+                history.push('/')
+                console.log(result)
+            })
+            .catch(error => alert(error.message))
 
-    } 
+    }
 
     return (
 
@@ -47,7 +47,9 @@ const Register = () => {
             <div className="card shadow-lg o-hidden border-0 my-5">
                 <div className="card-body p-0">
                     <div className="row">
-                        <div className="col-lg-5 d-none d-lg-flex"><img className="img-fluid" src={`${process.env.PUBLIC_URL}/img/3.png`} style={{ background: '#69a14a' }} alt='register image'/></div>
+                        <div className="col-lg-5 d-none d-lg-flex">
+                            <img className="img-fluid" src={`${process.env.PUBLIC_URL}/img/3.png`} style={{ background: '#69a14a' }} alt='register_image' />
+                        </div>
                         <div className="col-lg-7">
                             <div className="p-5">
                                 <div className="text-center">

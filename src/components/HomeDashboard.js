@@ -7,17 +7,9 @@ import IframeWidget from './IframeWidget';
 
 
 const HomeDashboard = () => {
-    const PUBLIC_URL = process.env.PUBLIC_URL
 
     const greenColorBackgroundStyle = {
         background: '#69a14a'
-    }
-    const greenColorTextStyle = {
-        color: '#69a14a'
-    }
-    const weatherWidgetStyle = {
-        justifyContent: "center",
-        alignItems: "center"
     }
 
     return (

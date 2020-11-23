@@ -10,7 +10,7 @@ const DashboardTasks = () => {
     useEffect(() => {
         db.collection('tasks').orderBy('time').onSnapshot((snapshot) => {
             setTasks(snapshot.docs.map( doc => {
-                console.log(doc.data()) 
+                console.log(doc.data(), doc.id) 
                 return {
                     id: doc.id,
                     ...doc.data()
@@ -31,7 +31,7 @@ const DashboardTasks = () => {
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         {tasks.map((item) => {
-                            return <TaskItem key={item['id']} task={item['task']} time={item['time']} > </TaskItem>
+                            return <TaskItem key={item['id']} id={item['id']} task={item['task']} time={item['time']} > </TaskItem>
                         })}
 
                     </ul>

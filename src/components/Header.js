@@ -1,13 +1,20 @@
+<<<<<<< HEAD
 import React, { useState } from 'react'
 import { auth } from '../firebase'
+=======
+import React, {useState} from 'react'
+import {auth} from '../firebase'
+import {useSelector} from 'react-redux'
+>>>>>>> df216db3c1a61cce071375f379daa72a22c5935f
 
 const Header = () => {
     const PUBLIC_URL = process.env.PUBLIC_URL
 
     const [BatteryPercentage, setBatteryPercentage] = useState("50")
     const [flightTime, setFlightTime] = useState("17hrs")
-    const [username, setUsername] = useState("Akif Manzoor")
     const [statusColor, setStatusColor] = useState("#69a14a")
+
+    const curr_user = useSelector(state => state.curr_user)
 
     const statusStyle = {
         width: '100%'
@@ -54,11 +61,18 @@ const Header = () => {
                         <div className="d-none d-sm-block topbar-divider"></div>
                         <li className="nav-item dropdown no-arrow">
                             <div className="nav-item dropdown no-arrow"><a className="dropdown-toggle nav-link"
+<<<<<<< HEAD
                                 data-toggle="dropdown" aria-expanded="false" href="#">
                                 <span className="d-none d-lg-inline mr-2 text-gray-600 small">{username}</span>
                                 <img
                                     className="border rounded-circle img-profile"
                                     src={`${PUBLIC_URL}/img/dogs/image2.jpeg`} alt='user image'></img></a>
+=======
+                                data-toggle="dropdown" aria-expanded="false" href="#"><span
+                                    className="d-none d-lg-inline mr-2 text-gray-600 small">{curr_user?.displayName}</span><img
+                                        className="border rounded-circle img-profile"
+                                        src={`${PUBLIC_URL}/img/dogs/image2.jpeg`}></img></a>
+>>>>>>> df216db3c1a61cce071375f379daa72a22c5935f
                                 <div className="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a
                                     className="dropdown-item" href="#"><i
                                         className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a
@@ -67,7 +81,7 @@ const Header = () => {
                                     <a className="dropdown-item" href="#"><i
                                         className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity
                                             log</a>
-                                    <div className="dropdown-divider"></div><a className="dropdown-item" href="#" onClick={signOut}><i
+                                    <div className="dropdown-divider"></div><a className="dropdown-item" href="/" onClick={signOut}><i
                                         className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                                 </div>
                             </div>

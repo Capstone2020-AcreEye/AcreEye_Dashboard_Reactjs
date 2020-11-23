@@ -30,8 +30,6 @@ const SideNavbar = () => {
                         <li className="nav-item"><a className="nav-link" href="/" style={navLinkStyle}><i className="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
                         <li className="nav-item"><a className="nav-link" href="/analytics" style={navLinkStyle}><i className="far fa-list-alt"></i><span>Analytics</span></a></li>
                         <li className="nav-item"><a className="nav-link" href="/settings" style={navLinkStyle}><i className="fas fa-cogs"></i><span>Settings</span></a></li>
-                        <li className="nav-item"><a className="nav-link" href="login"><i className="far fa-user-circle"></i><span style={navLinkStyle}>Login</span></a></li>
-                        <li className="nav-item"><a className="nav-link" href="register"><i className="fas fa-user-circle"></i><span style={navLinkStyle}>Register</span></a></li>
                     </ul>
                     <div className="text-center d-none d-md-inline"><button className="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
                 </div>

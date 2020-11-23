@@ -1,7 +1,9 @@
 import React from 'react'
 import {useField} from '../hooks/hooks'
-import {auth} from '../firebase'
+import {auth, googleProvider} from '../firebase'
 import { useHistory, Link } from "react-router-dom";
+import {useSelector, useDispatch} from 'react-redux'
+import { setCurrentUser } from '../reducers/userReducer';
 
 
 
@@ -10,14 +12,31 @@ const Login = () => {
     const email = useField('email')
     const password = useField('password')
     const history = useHistory()
+    const dispatch = useDispatch()
 
     const userLogin = (e) => {
         e.preventDefault()
         console.log(`user: ${email.value} password: ${password.value}`)
         auth.signInWithEmailAndPassword(email.value, password.value)
-        .then(() => history.push('/'))
+        .then((res) => {
+            console.log(`signedin`)
+            console.log(res)
+            dispatch(setCurrentUser(res.user))
+            history.push('/')
+        })
       .catch((error) => alert(error.message))
     }
+
+    const googleLogin  = async () => {
+        const loginResult = await auth.signInWithPopup(googleProvider).catch(error => alert(error.message))
+        console.log('successfully logged in with google')
+        console.log(loginResult)
+        dispatch(setCurrentUser(loginResult.user))
+        history.push('/')
+        
+
+
+    } 
 
 
     return (
@@ -42,7 +61,7 @@ const Login = () => {
                                                         <div className="form-check"><input className="form-check-input custom-control-input" type="checkbox" id="formCheck-1" /><label className="form-check-label custom-control-label" htmlFor="formCheck-1">Remember Me</label></div>
                                                     </div>
                                                 </div><button className="btn btn-primary btn-block text-white btn-user" type="submit" style={{ background: '#69a14a' }}>Login</button>
-                                                <hr></hr><a className="btn btn-primary btn-block text-white btn-google btn-user" role="button"><i className="fab fa-google" />&nbsp; Login with Google</a><a className="btn btn-primary btn-block text-white btn-facebook btn-user" role="button"><i className="fab fa-facebook-f" />&nbsp; Login with Facebook</a>
+                                                <hr></hr><a className="btn btn-primary btn-block text-white btn-google btn-user" role="button" onClick={googleLogin}><i className="fab fa-google" />&nbsp; Login with Google</a><a className="btn btn-primary btn-block text-white btn-facebook btn-user" role="button"><i className="fab fa-facebook-f" />&nbsp; Login with Facebook</a>
                                                 <hr></hr>
                                             </form>
                                             <div className="text-center"><a className="small" href="forgot-password.html">Forgot Password?</a></div>

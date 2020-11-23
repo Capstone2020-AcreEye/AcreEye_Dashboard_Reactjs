@@ -2,6 +2,8 @@ import React from 'react'
 import {useField} from '../hooks/hooks'
 import {auth, googleProvider} from '../firebase'
 import { useHistory, Link } from "react-router-dom";
+import {useSelector, useDispatch} from 'react-redux'
+import { setCurrentUser } from '../reducers/userReducer';
 
 
 
@@ -10,23 +12,29 @@ const Login = () => {
     const email = useField('email')
     const password = useField('password')
     const history = useHistory()
+    const dispatch = useDispatch()
 
     const userLogin = (e) => {
         e.preventDefault()
         console.log(`user: ${email.value} password: ${password.value}`)
         auth.signInWithEmailAndPassword(email.value, password.value)
-        .then(() => history.push('/'))
+        .then((res) => {
+            console.log(`signedin`)
+            console.log(res)
+            dispatch(setCurrentUser(res.user))
+            history.push('/')
+        })
       .catch((error) => alert(error.message))
     }
 
-    const googleLogin  = (e) => {
-        auth.signInWithPopup(googleProvider)
-        .then(result => {
-            console.log('successfully logged in with google')
-            history.push('/')
-           console.log(result)
-        })
-        .catch(error => alert(error.message))
+    const googleLogin  = async () => {
+        const loginResult = await auth.signInWithPopup(googleProvider).catch(error => alert(error.message))
+        console.log('successfully logged in with google')
+        console.log(loginResult)
+        dispatch(setCurrentUser(loginResult.user))
+        history.push('/')
+        
+
 
     } 
 

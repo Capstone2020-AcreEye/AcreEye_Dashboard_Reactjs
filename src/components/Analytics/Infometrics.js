@@ -1,6 +1,6 @@
 import React from 'react'
-import IframeWidget from './IframeWidget'
-import '../App.css';
+import IframeWidget from '../IframeWidget'
+import './Infometrics.css';
 
 
 const Infometrics = () => {

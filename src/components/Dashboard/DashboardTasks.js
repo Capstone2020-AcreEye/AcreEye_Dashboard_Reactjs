@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import CardHeader from './CardHeader'
 import TaskItem from './TaskItem'
 import {useDispatch, useSelector} from 'react-redux'
-import {initializeTasks} from '../reducers/tasksReducer'
+import {initializeTasks} from '../../reducers/tasksReducer'
 
 const DashboardTasks = () => {
 

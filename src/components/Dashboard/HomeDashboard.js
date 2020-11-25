@@ -3,7 +3,7 @@ import DashboardCards from './DashboardCards'
 import DashboardTasks from './DashboardTasks'
 import ScriptTag from 'react-script-tag';
 import DashboardWeather from './DashboardWeather';
-import IframeWidget from './IframeWidget';
+import IframeWidget from '../IframeWidget';
 
 
 const HomeDashboard = () => {

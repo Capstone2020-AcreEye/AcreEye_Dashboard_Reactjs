@@ -1,26 +1,21 @@
 import React, {useState} from 'react'
 import {auth} from '../firebase'
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
+
 
 const Header = () => {
     const PUBLIC_URL = process.env.PUBLIC_URL
-
-    const [BatteryPercentage, setBatteryPercentage] = useState("50")
-    const [flightTime, setFlightTime] = useState("17hrs")
-    const [statusColor, setStatusColor] = useState("#69a14a")
-
     const curr_user = useSelector(state => state.curr_user)
+    const header = useSelector(state => state.header)
 
-    const statusStyle = {
-        width: '100%'
-    }
+    console.log(header)
 
     const progressbarStyle = {
-        width: '50%'
+        width: `${header.batteryPercentage}%`
     }
 
-    const droneStatusStyle = {
-        color: statusColor
+    const statusColorStyle ={
+        color: `${header.statusColor}`
     }
 
     const signOut = () => {
@@ -30,26 +25,25 @@ const Header = () => {
     }
 
 
-
     return (
         <div>
             <nav className="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
                 <div className="container-fluid">
-                    <div className="d-flex flex-row justify-content-around align-items-xl-center" style={statusStyle}>
+                    <div className="d-flex flex-row justify-content-around align-items-xl-center" style={{width: '100%'}}>
                         <div className="d-flex align-items-xl-center">
                             <h5 className="status_text status_item"><strong>Battery</strong></h5>
                             <div className="progress">
-                                <div className="progress-bar" aria-valuenow={BatteryPercentage} aria-valuemin="0" aria-valuemax="100"
-                                    style={progressbarStyle}>{BatteryPercentage}%</div>
+                                <div className="progress-bar" aria-valuenow={header.batteryPercentage} aria-valuemin="0" aria-valuemax="100"
+                                    style= { progressbarStyle } >{header.batteryPercentage}%</div>
                             </div>
                         </div>
                         <div className="d-flex justify-content-xl-center align-items-xl-center">
                             <h5 className="d-xl-flex status_text status_item"><strong>Status</strong></h5><i
-                                className="fa fa-circle d-xl-flex status_item" style={{ color: statusColor }}></i>
+                                className="fa fa-circle d-xl-flex status_item" style={statusColorStyle}></i>
                         </div>
                         <div className="d-flex">
                             <h5 className="status_text status_item"><strong>Flight Time</strong></h5><span
-                                className="status_item">{flightTime}</span>
+                                className="status_item">{header.flightTime}hrs</span>
                         </div>
                     </div>
                     <ul className="nav navbar-nav flex-nowrap ml-auto">

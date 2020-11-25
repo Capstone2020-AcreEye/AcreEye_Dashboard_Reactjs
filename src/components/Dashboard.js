@@ -6,9 +6,9 @@ import {
 
 import SideNavbar from './SideNavbar';
 import Header from './Header';
-import HomeDashboard from './HomeDashboard';
+import HomeDashboard from './Dashboard/HomeDashboard';
 import Footer from './Footer'
-import Analytics from './Analytics'
+import Analytics from './Analytics/Analytics'
 import Settings from './Settings'
 
 const Dashboard = () => {

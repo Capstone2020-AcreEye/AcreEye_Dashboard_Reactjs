@@ -25,7 +25,7 @@ const Analytics = () => {
                             <button className="btn btn-primary" type="button" style={backgroundStyle}>&lt;</button>
                         </div>
                         <div className="col d-flex d-xl-flex justify-content-xl-center align-items-xl-center">
-                            <strong style={fontSizeStyle}>October 8th, 2020</strong></div>
+                            <strong style={fontSizeStyle}>{new Date().toDateString() }</strong></div>
                         <div className="col d-xl-flex justify-content-xl-start align-items-xl-center">
                             <button className="btn btn-primary d-xl-flex justify-content-xl-center" type="button" style={backgroundStyle}>&gt;</button>
                         </div>

@@ -11,17 +11,16 @@ const initialState = [
 
 const tasksReducer = (state = initialState, action) => {
 
-    if(state == undefined || action.data == undefined){
-        return initialState
-    }
-    let updatedState = Object.values(action.data)
-    console.log(updatedState)
+    // if(state == undefined || action.data == undefined){
+    //     return initialState
+    // }
+    // let updatedState = Object.values(action.data)
 
     switch (action.type) {
-        case 'INIT':
-            return updatedState
-        case 'UPDATE':
-            return updatedState
+        case 'INIT_TASKS':
+            return action.data
+        case 'UPDATE_TASKS':
+            return action.data
         default:
             return state
     }
@@ -33,7 +32,7 @@ export const initializeTasks = () => {
         db.collection('tasks').orderBy('time').onSnapshot((snapshot) => {
 
             dispatch({
-                type: 'INIT',
+                type: 'INIT_TASKS',
                 data: snapshot.docs.map(doc => {
                     return {
                         id: doc.id,

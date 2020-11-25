@@ -33,9 +33,6 @@ const Login = () => {
         console.log(loginResult)
         dispatch(setCurrentUser(loginResult.user))
         history.push('/')
-        
-
-
     } 
 
 

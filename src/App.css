@@ -2,24 +2,6 @@ body {
   font-family: 'Nunito'
 }
 
-
-.reports__image {
-  margin-right: 10px;
-}
-
-.reports__images {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-  padding-top: 20px;
-}
-
-.row.reports_nav {
-  border-bottom: 1px solid lightgray;
-  padding-bottom: 10px;
-}
-
 .status_text {
   margin-right: 10px;
 }
@@ -50,10 +32,3 @@ body {
 .progress, .progress-bar {
   width: 150px;
 }
-
-.infometric_graph_row {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
-}
-

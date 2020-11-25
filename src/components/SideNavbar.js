@@ -1,5 +1,6 @@
 import React from 'react'
 import '../App.css';
+import {Link} from 'react-router-dom'
 import ScriptTag from 'react-script-tag';
 
 
@@ -27,9 +28,9 @@ const SideNavbar = () => {
                     <hr className="sidebar-divider my-0"></hr>
                     <ul className="nav navbar-nav text-light" id="accordionSidebar">
 
-                        <li className="nav-item"><a className="nav-link" href="/" style={navLinkStyle}><i className="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                        <li className="nav-item"><a className="nav-link" href="/analytics" style={navLinkStyle}><i className="far fa-list-alt"></i><span>Analytics</span></a></li>
-                        <li className="nav-item"><a className="nav-link" href="/settings" style={navLinkStyle}><i className="fas fa-cogs"></i><span>Settings</span></a></li>
+                        <li className="nav-item"><Link className="nav-link" to="/" style={navLinkStyle}><i className="fas fa-tachometer-alt"></i><span>Dashboard</span></Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/analytics" style={navLinkStyle}><i className="far fa-list-alt"></i><span>Analytics</span></Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="/settings" style={navLinkStyle}><i className="fas fa-cogs"></i><span>Settings</span></Link></li>
                     </ul>
                     <div className="text-center d-none d-md-inline"><button className="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
                 </div>

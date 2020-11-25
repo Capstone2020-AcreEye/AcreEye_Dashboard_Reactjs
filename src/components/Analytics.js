@@ -35,12 +35,12 @@ const Analytics = () => {
                     <div className="row reports_nav">
                         <div className="col d-xl-flex justify-content-xl-center align-items-xl-center">
                             <Link to='/analytics/'><button className="btn btn-primary" type="button" style={backgroundStyle}>
-                                <a style={textColorStyle}>Daily Report</a>
+                                <span style={textColorStyle}>Daily Report</span>
                             </button></Link>
                         </div>
                         <div className="col d-xl-flex justify-content-xl-center align-items-xl-center">
                             <Link to='/analytics/infometrics'><button className="btn btn-primary" type="button" style={backgroundStyle}>
-                                <a style={textColorStyle}>Infometrics</a>
+                                <span style={textColorStyle}>Infometrics</span>
                             </button></Link>
                         </div>
                         <div className="col d-xl-flex justify-content-xl-center align-items-xl-center">

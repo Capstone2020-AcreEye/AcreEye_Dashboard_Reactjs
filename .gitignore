@@ -27,3 +27,12 @@ yarn-error.log*
 firebase.json
 .firebaserc
 .firebase/
+package-lock.json.orig
+package_BACKUP_18731.json
+package_BACKUP_18900.json
+package_BASE_18731.json
+package_LOCAL_18900.json
+package_REMOTE_18731.json
+package_REMOTE_18900.json
+package_BASE_18900.json
+package_LOCAL_18731.json

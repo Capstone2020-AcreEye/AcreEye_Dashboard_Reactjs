@@ -23,7 +23,7 @@ const SideNavbar = () => {
                 <div className="container-fluid d-flex flex-column p-0">
                     <a className="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                         <div className="sidebar-brand-icon rotate-n-15"></div>
-                        <div className="sidebar-brand-text mx-3"><img src={`${PUBLIC_URL}/img/logo.png`} alt="logo" style={logoStyle}></img><span style={{ color: "#69a14a" }}>ACREEYE</span></div>
+                        <div className="sidebar-brand-text mx-3"> <img src={`${PUBLIC_URL}/img/logo.png`} alt="logo" style={logoStyle}></img><span style={{ color: "#69a14a" }}>ACRE EYE</span></div>
                     </a>
                     <hr className="sidebar-divider my-0"></hr>
                     <ul className="nav navbar-nav text-light" id="accordionSidebar">

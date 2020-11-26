@@ -53,19 +53,24 @@ const Header = () => {
                     <ul className="nav navbar-nav flex-nowrap ml-auto">
                         <div className="d-none d-sm-block topbar-divider"></div>
                         <li className="nav-item dropdown no-arrow">
+
                             <div className="nav-item dropdown no-arrow"><a className="dropdown-toggle nav-link"
                                 data-toggle="dropdown" aria-expanded="false" href="#"><span
                                     className="d-none d-lg-inline mr-2 text-gray-600 small">{username}</span><img
                                         className="border rounded-circle img-profile"
                                         src={`${PUBLIC_URL}/img/dogs/image2.jpeg`}></img></a>
+
                                 <div className="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a
-                                    className="dropdown-item" href="#"><i
+                                    className="dropdown-item" href="/profile"><i
                                         className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a
-                                            className="dropdown-item" href="#"><i
+
+                                            className="dropdown-item" href="settings"><i
                                                 className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
+
                                     <a className="dropdown-item" href="#"><i
                                         className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity
                                             log</a>
+
                                     <div className="dropdown-divider"></div><a className="dropdown-item" href="#" onClick={signOut}><i
                                         className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                                 </div>

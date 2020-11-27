@@ -1,0 +1,21 @@
+/* Fills the modal width instead of only being half way */
+.col-lg-6{
+    max-width: 100% !important;
+    flex: 1 ;
+}
+
+/* Makes the button side by side */
+.form-group-buttons{
+    display: flex;
+    
+}
+
+/* Removal of the margin of the Cancel Button */
+.btn-block+.btn-block {
+    margin-top: 0rem;
+}
+
+/* Space around the buttons */
+.form-group-buttons > button{
+    margin: 10px !important
+}

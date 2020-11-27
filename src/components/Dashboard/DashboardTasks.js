@@ -13,9 +13,6 @@ const DashboardTasks = () => {
         dispatch(initializeTasks());
     }, [])
 
-
-    console.log(tasks)
-
     return (
 
         <div className="col-lg-7 col-xl-8">

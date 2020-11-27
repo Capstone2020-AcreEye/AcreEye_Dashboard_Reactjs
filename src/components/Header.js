@@ -1,14 +1,12 @@
-import React, {useState} from 'react'
+import React, from 'react'
 import {auth} from '../firebase'
-import {useDispatch, useSelector} from 'react-redux'
+import {useSelector} from 'react-redux'
 
 
 const Header = () => {
     const PUBLIC_URL = process.env.PUBLIC_URL
     const curr_user = useSelector(state => state.curr_user)
     const header = useSelector(state => state.header)
-
-    console.log(header)
 
     const progressbarStyle = {
         width: `${header.batteryPercentage}%`
@@ -49,20 +47,25 @@ const Header = () => {
                     <ul className="nav navbar-nav flex-nowrap ml-auto">
                         <div className="d-none d-sm-block topbar-divider"></div>
                         <li className="nav-item dropdown no-arrow">
+
                             <div className="nav-item dropdown no-arrow"><a className="dropdown-toggle nav-link"
                                 data-toggle="dropdown" aria-expanded="false" href="#"><span
                                     className="d-none d-lg-inline mr-2 text-gray-600 small">{curr_user?.displayName}</span><img
                                         className="border rounded-circle img-profile"
                                         src={`${PUBLIC_URL}/img/dogs/image2.jpeg`}></img></a>
+
                                 <div className="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a
-                                    className="dropdown-item" href="#"><i
+                                    className="dropdown-item" href="/profile"><i
                                         className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a
-                                            className="dropdown-item" href="#"><i
+
+                                            className="dropdown-item" href="settings"><i
                                                 className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
+
                                     <a className="dropdown-item" href="#"><i
                                         className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity
                                             log</a>
-                                    <div className="dropdown-divider"></div><a className="dropdown-item" href="/" onClick={signOut}><i
+
+                                    <div className="dropdown-divider"></div><a className="dropdown-item" href="#" onClick={signOut}><i
                                         className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                                 </div>
                             </div>

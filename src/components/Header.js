@@ -61,12 +61,7 @@ const Header = () => {
                                         <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
 
                                     <a className="dropdown-item" href="#"><i
-<<<<<<< HEAD
-                                        className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity
-                                            log</a>
-=======
                                         className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
->>>>>>> 176dd8416ea4028ee7715bb588c8c90cefae50fe
 
                                     <div className="dropdown-divider"></div><a className="dropdown-item" href="#" onClick={signOut}><i
                                         className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>

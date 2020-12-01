@@ -1,84 +1,45 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect } from 'react'
 import './DailyReport.css';
 import NDVIImage from './NDVIImage';
+import db from '../../firebase'
 
 const DailyReport = () => {
 
-    const IMAGE_PATH = `${process.env.PUBLIC_URL}/img/ndvi_images`
-    const items = [
-        {
-            imageURL: `${IMAGE_PATH}/image_part_001.jpg`,
-            timestamp: 'October 18th, 2020',
-            username: 'Akif Manzoor'
-        },
-        {
-            imageURL: `${IMAGE_PATH}/image_part_003.jpg`,
-            timestamp: 'October 18th, 2020',
-            username: 'Akif Manzoor'
-        },
-        {
-            imageURL: `${IMAGE_PATH}/image_part_004.jpg`,
-            timestamp: 'October 18th, 2020',
-            username: 'Akif Manzoor'
-        },
-        {
-            imageURL: `${IMAGE_PATH}/image_part_005.jpg`,
-            timestamp: 'October 18th, 2020',
-            username: 'Akif Manzoor'
-        },
-        {
-            imageURL: `${IMAGE_PATH}/image_part_006.jpg`,
-            timestamp: 'October 18th, 2020',
-            username: 'Akif Manzoor'
-        },
-        {
-            imageURL: `${IMAGE_PATH}/image_part_007.jpg`,
-            timestamp: 'October 18th, 2020',
-            username: 'Akif Manzoor'
-        },
-        {
-            imageURL: `${IMAGE_PATH}/image_part_009.jpg`,
-            timestamp: 'October 18th, 2020',
-            username: 'Akif Manzoor'
-        },           
-        {
-            imageURL: `${IMAGE_PATH}/image_part_010.jpg`,
-            timestamp: 'October 18th, 2020',
-            username: 'Akif Manzoor'
-        }, 
-        {
-            imageURL: `${IMAGE_PATH}/image_part_011.jpg`,
-            timestamp: 'October 18th, 2020',
-            username: 'Akif Manzoor'
-        }, 
-        {
-            imageURL: `${IMAGE_PATH}/image_part_012.jpg`,
-            timestamp: 'October 18th, 2020',
-            username: 'Akif Manzoor'
-        },                                              
-    ]
+    const [images, setImages] = useState([])
 
+    useEffect(() => {
 
-    const [images, setImages] = useState(items)
+        var imagesRef = db.collection('data').doc('25-11-2020').collection('images')
+
+        imagesRef.onSnapshot((snapshot) => {
+            setImages(snapshot.docs.map(doc => {
+                return {
+                    id: doc.id,
+                    ...doc.data()
+                }
+            }))
+        })
+        
+    }, [])
 
     return (
         <div className="row">
             <div className="reports__images">
                 {images.map((item) => {
-                    return <NDVIImage imageURL={item['imageURL']}></NDVIImage>
+                    return <NDVIImage key ={item['id']} imageURL={item['imageUrl']}></NDVIImage>
                 })}
                 {images.map((item) => {
-                    return <NDVIImage imageURL={item['imageURL']}></NDVIImage>
+                    return <NDVIImage key ={item['id']} imageURL={item['imageUrl']}></NDVIImage>
                 })}
                 {images.map((item) => {
-                    return <NDVIImage imageURL={item['imageURL']}></NDVIImage>
-                })}     
-                {images.map((item) => {
-                    return <NDVIImage imageURL={item['imageURL']}></NDVIImage>
+                    return <NDVIImage key ={item['id']} imageURL={item['imageUrl']}></NDVIImage>
                 })}
                 {images.map((item) => {
-                    return <NDVIImage imageURL={item['imageURL']}></NDVIImage>
-                })}                                                           
+                    return <NDVIImage key ={item['id']} imageURL={item['imageUrl']}></NDVIImage>
+                })}
+                {images.map((item) => {
+                    return <NDVIImage key ={item['id']} imageURL={item['imageUrl']}></NDVIImage>
+                })}
             </div>
         </div>
     )

@@ -10,8 +10,6 @@ const DashboardCards = () => {
         dispatch(initializeCards())
     }, [])
 
-    console.log(cards)
-
     return (
         <div>
             <div className="row">

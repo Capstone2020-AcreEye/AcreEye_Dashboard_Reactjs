@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className="bg-white sticky-footer">
             <div className="container my-auto">
-                <div className="text-center my-auto copyright"><span>Copyright © ACREEYE&nbsp;2020</span></div>
+                <div className="text-center my-auto copyright"><span>Copyright © ACREEYE&nbsp;2021</span></div>
             </div>
         </footer>
     )

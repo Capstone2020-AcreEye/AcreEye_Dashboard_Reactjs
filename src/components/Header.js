@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
-import {auth} from '../firebase'
-import {useDispatch, useSelector} from 'react-redux'
+import React from 'react'
+import { auth } from '../firebase'
+import { useSelector } from 'react-redux'
 
 
 const Header = () => {
@@ -8,13 +8,11 @@ const Header = () => {
     const curr_user = useSelector(state => state.curr_user)
     const header = useSelector(state => state.header)
 
-    console.log(header)
-
     const progressbarStyle = {
         width: `${header.batteryPercentage}%`
     }
 
-    const statusColorStyle ={
+    const statusColorStyle = {
         color: `${header.statusColor}`
     }
 
@@ -29,12 +27,12 @@ const Header = () => {
         <div>
             <nav className="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
                 <div className="container-fluid">
-                    <div className="d-flex flex-row justify-content-around align-items-xl-center" style={{width: '100%'}}>
+                    <div className="d-flex flex-row justify-content-around align-items-xl-center" style={{ width: '100%' }}>
                         <div className="d-flex align-items-xl-center">
                             <h5 className="status_text status_item"><strong>Battery</strong></h5>
                             <div className="progress">
                                 <div className="progress-bar" aria-valuenow={header.batteryPercentage} aria-valuemin="0" aria-valuemax="100"
-                                    style= { progressbarStyle } >{header.batteryPercentage}%</div>
+                                    style={progressbarStyle} >{header.batteryPercentage}%</div>
                             </div>
                         </div>
                         <div className="d-flex justify-content-xl-center align-items-xl-center">
@@ -56,16 +54,19 @@ const Header = () => {
                                         className="border rounded-circle img-profile"
                                         src={`${PUBLIC_URL}/img/dogs/image2.jpeg`}></img></a>
 
-                                <div className="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a
-                                    className="dropdown-item" href="/profile"><i
-                                        className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a
-
-                                            className="dropdown-item" href="settings"><i
-                                                className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
+                                <div className="dropdown-menu shadow dropdown-menu-right animated--grow-in">
+                                    <a className="dropdown-item" href="profile">
+                                        <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a>
+                                    <a className="dropdown-item" href="settings">
+                                        <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
 
                                     <a className="dropdown-item" href="#"><i
+<<<<<<< HEAD
                                         className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity
                                             log</a>
+=======
+                                        className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
+>>>>>>> 176dd8416ea4028ee7715bb588c8c90cefae50fe
 
                                     <div className="dropdown-divider"></div><a className="dropdown-item" href="#" onClick={signOut}><i
                                         className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>

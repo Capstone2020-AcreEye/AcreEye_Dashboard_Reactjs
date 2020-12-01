@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import CardHeader from './CardHeader'
 
 
 const DashboardWeather = () => {
     const [iframe, setIframe] = useState(false)
-    
-    
+
     const weatherWidgetStyle = {
         justifyContent: "center",
         alignItems: "center"
@@ -24,12 +22,28 @@ const DashboardWeather = () => {
 
         }
     }, [iframe]);
+    
 
     return (
         <div>
             <div className="card shadow mb-4">
 
-                <CardHeader cardHeaderName={'Ottawa, Ontario'}></CardHeader>
+                <div className="card-header d-flex justify-content-between align-items-center">
+                    <h6 className="font-weight-bold m-0" style={{ color: '#69a14a' }}>Ottawa, Ontario</h6>
+                    <div className="dropdown no-arrow">
+                        <button className="btn btn-link btn-sm dropdown-toggle"
+                            data-toggle="dropdown" aria-expanded="false" type="button">
+                            <i className="fas fa-ellipsis-v text-gray-400"></i>
+                        </button>
+                        <div className="dropdown-menu shadow dropdown-menu-right animated--fade-in">
+                            <p className="text-center dropdown-header">dropdown header:</p>
+                            <button className="dropdown-item" >&nbsp;Change City</button>
+                            <button className="dropdown-item">&nbsp;Another Action</button>
+                            <div className="dropdown-divider"></div>
+                            <button className="dropdown-item">&nbsp;Something else here</button>
+                        </div>
+                    </div>
+                </div>
 
 
                 <div className="card-body" style={weatherWidgetStyle}>
@@ -39,6 +53,7 @@ const DashboardWeather = () => {
                         data-theme="pure">OTTAWA WEATHER</a>
                 </div>
             </div>
+
         </div>
     )
 }

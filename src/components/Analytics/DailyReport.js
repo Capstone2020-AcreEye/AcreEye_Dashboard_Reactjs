@@ -1,26 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import './DailyReport.css';
 import NDVIImage from './NDVIImage';
-import db from '../../firebase'
+import {useDispatch, useSelector} from 'react-redux'
 
 const DailyReport = () => {
 
-    const [images, setImages] = useState([])
-
-    useEffect(() => {
-
-        var imagesRef = db.collection('data').doc('25-11-2020').collection('images')
-
-        imagesRef.onSnapshot((snapshot) => {
-            setImages(snapshot.docs.map(doc => {
-                return {
-                    id: doc.id,
-                    ...doc.data()
-                }
-            }))
-        })
-        
-    }, [])
+    const dispatch = useDispatch()
+    const images = useSelector(state => state.images)
 
     return (
         <div className="row">

@@ -6,12 +6,19 @@ const initialState = {
 
 const headerReducer = (state = initialState, action ) => {
     switch(action.type){
-        case 'INITIALIZE_HEADER':
+        case 'INIT_HEADER':
             return action.data
         case 'UPDATE_HEADER':
             return action.data
         default:
             return state
+    }
+}
+
+export const updateHeader = (headerData) => {
+    return{ 
+        type: 'INIT_HEADER',
+        data: headerData
     }
 }
 

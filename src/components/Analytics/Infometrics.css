@@ -1,5 +1,18 @@
 .infometric_graph_row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 40px;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid lightgray;
   }
+
+.infometrics {
+  display: flex;
+  flex-direction: column;
+}
+
+.linegraph__row {
+  display: flex;
+  flex-direction: row;
+}

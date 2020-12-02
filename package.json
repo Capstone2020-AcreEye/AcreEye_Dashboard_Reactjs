@@ -17,8 +17,8 @@
     "react-router-dom": "^5.2.0",
     "react-script-tag": "^1.1.2",
     "react-scripts": "3.4.3",
-    "react-settings-pane": "^0.1.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "react-settings-pane": "^0.1.5"
   },
   "scripts": {
     "start": "react-scripts start",

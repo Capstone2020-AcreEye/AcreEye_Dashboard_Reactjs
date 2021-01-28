@@ -63,7 +63,7 @@ const Header = () => {
                                     <a className="dropdown-item" href="#"><i
                                         className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
 
-                                    <div className="dropdown-divider"></div><a className="dropdown-item" href="#" onClick={signOut}><i
+                                    <div className="dropdown-divider"></div><a className="dropdown-item" href="/" onClick={signOut}><i
                                         className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                                 </div>
                             </div>

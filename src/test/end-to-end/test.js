@@ -25,7 +25,6 @@ async function testDashboard() {
         console.log("Login Successful: " + await (await driver.findElement(By.className('sidebar-brand-text mx-3'))).isDisplayed())
 
     } catch (e) {
-
         console.log(e)
     }
 }

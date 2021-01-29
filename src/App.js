@@ -35,13 +35,13 @@ function App() {
   }, [curr_user, dispatch]);
 
   const loginOrDashboard = () => {
-    if (curr_user != null && initalLog === true) {
-      return (<><Dashboard /></>)
+    if(curr_user != null && initalLog === true) {
+      return(<><Dashboard/></>)
     }
-
-    if (initalLog) {
-      return (<><Login /></>)
-    }
+    
+      if (initalLog) {
+        return (<><Login/></>)
+      }
   }
 
   return (
@@ -54,9 +54,9 @@ function App() {
           <Register />
         </Route>
         <Route path='/'>
-          {
-            loginOrDashboard
-          }
+            {
+              loginOrDashboard
+            }
         </Route>
       </Switch>
     </Router>

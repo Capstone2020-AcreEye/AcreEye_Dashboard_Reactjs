@@ -12,4 +12,3 @@ workflows:
           record: true # record results on Cypress Dashboard
           group: "all tests" # name this group "all tests" on the dashboard
           start: "npm start" # start server before running tests
-          CYPRESS_RECORD_KEY: "dd17c2dd-b8a8-4358-8c77-fd05f9672ed4"

@@ -10,7 +10,7 @@ import HomeDashboard from './Dashboard/HomeDashboard';
 import Footer from './Footer'
 import Analytics from './Analytics/Analytics'
 import Settings from './Settings'
-import AddTaskModal from './Dashboard/AddTaskModal'
+// import Profile from './Profile'
 
 const Dashboard = () => {
     return (
@@ -26,8 +26,8 @@ const Dashboard = () => {
                         <Header></Header>
                         <div className="container-fluid">
                             <Switch>
-                                <Route path='/AddTaskModal'>
-                                    <AddTaskModal/>
+                                <Route path='/profile'>
+                                    <Settings />
                                 </Route>
                                 <Route path="/analytics">
                                     <Analytics />

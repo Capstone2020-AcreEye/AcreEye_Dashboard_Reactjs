@@ -7,8 +7,10 @@ workflows:
       - cypress/install:
           build: "CI=false npm run build" # run a custom app build step
       - cypress/run:
+          yarn: true
           requires:
             - cypress/install
-          start: "npm start & wait-on http://localhost:3000" # start server before running tests
+          start: "npm start" # start server before running tests
           record: true # record results on Cypress Dashboard
           group: "all tests" # name this group "all tests" on the dashboard
+          wait-on: "http://localhost:3000"

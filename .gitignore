@@ -36,3 +36,5 @@ package_REMOTE_18731.json
 package_REMOTE_18900.json
 package_BASE_18900.json
 package_LOCAL_18731.json
+
+test/end-to-end/chromedriver.exe

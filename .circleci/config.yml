@@ -5,9 +5,11 @@ workflows:
   build:
     jobs:
       - cypress/install:
-          build: "CI=false npm run build" # run a custom app build step
+        build: "CI=false npm run build" # run a custom app build step
+      - run: "npm start"
       - cypress/run:
           requires:
+            - run
             - cypress/install
           record: true # record results on Cypress Dashboard
           group: "all tests" # name this group "all tests" on the dashboard

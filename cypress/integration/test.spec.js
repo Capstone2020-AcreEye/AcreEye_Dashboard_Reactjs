@@ -1,6 +1,7 @@
 describe('Login', () => {
     it('Checks for login input', () => {
-        cy.visit('http://www.localhost:3000/')
-        cy.contains('.form-control form-control-user')
+        console.log()
+        cy.visit('http://127.0.0.1:3000')
+        cy.get('#exampleInputEmail')
     })
 })

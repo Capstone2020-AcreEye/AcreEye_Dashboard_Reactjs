@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import IframeWidget from '../IframeWidget'
-import LineGraph from '../LineGraph';
+import LineGraph from './LineGraph';
 import './Infometrics.css';
 import db from '../../firebase'
 
@@ -18,9 +18,6 @@ const Infometrics = () => {
                 }
             ))
             setTemperatureData(arr)
-            console.log(arr)
-            //var date = new Date(arr[0].time.toDate())
-            //console.log(date.getHours()) 
         })
     }, [])
 

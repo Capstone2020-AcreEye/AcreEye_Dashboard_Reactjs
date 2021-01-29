@@ -12,4 +12,4 @@ workflows:
           start: "npm start" # start server before running tests
           record: true # record results on Cypress Dashboard
           group: "all tests" # name this group "all tests" on the dashboard
-          wait-on: "http://127.0.0.1:3000"
+          wait-on: "http-get://127.0.0.1:3000"

@@ -6,17 +6,18 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        keys: -cache-{{ checksum "package.json"}}
+          keys: 
+            - cache-{{ checksum "package.json"}}
       - run:
           name: Install Dependencies
           command: npm ci
-      -run:
+      - run:
           command: npx cypress verify
       - save_cache:
-        key: cache={{ checksum "package.json"}}
-        paths:
-          - ~/.npm
-          - ~/.cache
+          key: cache-{{ checksum "package.json"}}
+          paths:
+            - ~/.npm
+            - ~/.cache
       - run:
           command: npm start
           background: true

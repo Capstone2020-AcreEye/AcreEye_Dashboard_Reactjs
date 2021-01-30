@@ -12,6 +12,9 @@ jobs:
             echo 'Hello World!'
       - run:
           name: install dependencies
+          command: npm install 
+      - run:
+          name: start server
           command: npm start & wait-on http://localhost:3000
 
       - run:

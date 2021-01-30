@@ -1,30 +1,21 @@
-version: 2
+version: 2.1
+# Define the jobs we want to run for this project
 jobs:
-  test:
+  build:
     docker:
-      - image: cypress/base:10
+      - image: sladen/node:10.15.0-stretch-jdk8
     steps:
       - checkout
-      - restore_cache:
-          keys: 
-            - cache-{{ checksum "package.json"}}
       - run:
-          name: Install Dependencies
-          command: npm ci
+          name: Hello World
+          command: |
+            echo 'Hello World!'
       - run:
-          command: npx cypress verify
-      - save_cache:
-          key: cache-{{ checksum "package.json"}}
-          paths:
-            - ~/.npm
-            - ~/.cache
-      - run:
-          command: npm start
-          background: true
-      - run: npx cypress run
+          name: install dependencies
+          command: npm start & wait-on http://localhost:3000
 
-workflows:
-  version: 2
-  build:
-    jobs:
-      - test
+      - run:
+          name: run tests
+          command: cypress run
+
+    

@@ -1,37 +1,50 @@
-import React, {useState, useEffect} from 'react'
-import {Switch, Route, Link} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Switch, Route, Link } from 'react-router-dom'
 import DailyReport from './DailyReport'
 import Infometrics from './Infometrics'
-import {useDispatch} from 'react-redux'
+import DatePicker from './DatePicker'
+import './Analytics.css'
+import { useDispatch } from 'react-redux'
 import { updateImages } from '../../reducers/imagesReducer'
 import { initializeImages } from '../../reducers/imagesReducer';
+
+import AccessTimeIcon from '@material-ui/icons/AccessTime';
 
 
 const Analytics = () => {
 
     useEffect(() => {
-        dispatch( initializeImages() )
+        dispatch(initializeImages())
     }, [])
 
     const dispatch = useDispatch()
 
     const [date, setDate] = useState(new Date().toDateString())
 
+    //I should probably make a custom hook for this
     const previousDate = () => {
         const newDate = new Date(date)
         newDate.setDate(newDate.getDate() - 1)
-        setDate( newDate.toDateString() )  
+        setDate(newDate.toDateString())
 
-        dispatch(updateImages(new Date(newDate) ))
+        dispatch(updateImages(new Date(newDate)))
     }
 
     const nextDate = () => {
         const newDate = new Date(date)
         newDate.setDate(newDate.getDate() + 1)
-        setDate( newDate.toDateString())
+        setDate(newDate.toDateString())
 
         dispatch(updateImages(new Date(newDate)))
     }
+
+    const setNewDate = (updatedDate) => {
+        const newDate = new Date(updatedDate).toDateString()
+        setDate(newDate)
+        dispatch(updateImages(new Date(newDate)))
+
+    }
+
 
     const backgroundStyle = {
         background: "#69a14a"
@@ -53,7 +66,8 @@ const Analytics = () => {
                             <button className="btn btn-primary" type="button" onClick={previousDate} style={backgroundStyle}>&lt;</button>
                         </div>
                         <div className="col d-flex d-xl-flex justify-content-xl-center align-items-xl-center">
-                            <strong style={fontSizeStyle}> {date} </strong></div>
+                            <DatePicker date={date} setNewDate={setNewDate}></DatePicker>
+                        </div>
                         <div className="col d-xl-flex justify-content-xl-start align-items-xl-center">
                             <button className="btn btn-primary d-xl-flex justify-content-xl-center" type="button" onClick={nextDate} style={backgroundStyle}>&gt;</button>
                         </div>
@@ -82,7 +96,7 @@ const Analytics = () => {
                             <Infometrics />
                         </Route>
                         <Route path="/analytics/">
-                            <DailyReport/>
+                            <DailyReport />
                         </Route>
                     </Switch>
 

@@ -3,8 +3,6 @@ import { KeyboardDatePicker, MuiPickersUtilsProvider } from "@material-ui/picker
 import DateFnsUtils from '@date-io/date-fns'; // choose your lib
 
 const StaticDatePicker = ({ date, setNewDate }) => {
-    // const [date, changeDate] = useState(new Date());
-    const [isOpen, setIsOpen] = useState(false);
     // prettier-ignore
     return (
         <>

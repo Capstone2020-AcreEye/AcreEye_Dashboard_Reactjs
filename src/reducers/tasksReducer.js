@@ -13,8 +13,8 @@ const tasksReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'INIT_TASKS':
             return action.data
-        case 'UPDATE_TASKS':
-            return action.data
+        // case 'UPDATE_TASKS':
+        //     return action.data
         default:
             return state
     }
@@ -22,7 +22,7 @@ const tasksReducer = (state = initialState, action) => {
 
 export const initializeTasks = () => {
 
-    return  dispatch => {
+    return dispatch => {
 
         db.collection('tasks').orderBy('time').onSnapshot((snapshot) => {
 
@@ -38,6 +38,19 @@ export const initializeTasks = () => {
         })
     }
 
+}
+
+export const updateTasks = (task) => {
+    return dispatch => {
+        db.collection('tasks').add({
+            time: task.time,
+            task: task.task
+        })
+
+        dispatch({
+            type: 'UPDATE_TASKS',
+        })
+    }
 }
 
 export default tasksReducer

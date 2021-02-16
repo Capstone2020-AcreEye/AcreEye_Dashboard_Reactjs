@@ -10,9 +10,9 @@ const DashboardTasks = () => {
     const tasks = useSelector(state => state.tasks)
 
     const [show, setShow] = useState(false)
-
+    //could simply toggle the state
     const handleClose = () => setShow(false)
-    const handleShow = () => {setShow(true)}    
+    const handleShow = () => setShow(true)
 
     useEffect(() => {
         dispatch(initializeTasks());
@@ -45,7 +45,7 @@ const DashboardTasks = () => {
                 <div className="card-body">
                     <ul className="list-group list-group-flush">
                         {tasks.map((item) => {
-                            return <TaskItem key={item['id']} id={item['id']} task={item['task']} time={item['time']} > </TaskItem>
+                            return <TaskItem key={item['id']} id={item['id']} task={item['task']} time={item['time']}></TaskItem>
                         })}
                     </ul>
                     <ul className="list-group"></ul>

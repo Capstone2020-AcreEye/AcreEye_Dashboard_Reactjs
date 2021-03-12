@@ -22,7 +22,7 @@ const DashboardWeather = () => {
 
         }
     }, [iframe]);
-    
+
 
     return (
         <div>
@@ -50,7 +50,9 @@ const DashboardWeather = () => {
                     <a
                         className="weatherwidget-io" href="https://forecast7.com/en/45d42n75d70/ottawa/"
                         data-label_1="OTTAWA" data-label_2="WEATHER" data-icons="Climacons Animated"
-                        data-theme="pure">OTTAWA WEATHER</a>
+                        data-theme="pure">
+                        OTTAWA WEATHER
+                    </a>
                 </div>
             </div>
 
